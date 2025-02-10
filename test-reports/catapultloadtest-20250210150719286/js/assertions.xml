@@ -1,0 +1,35 @@
+<testsuite name="CatapultLoadTest" tests="11" errors="0" failures="1" time="0">
+  <testcase name="query all books: 95th percentile of response time is less than or equal to 1000.0" status="true" time="0">
+  <system-out>query all books: 95th percentile of response time is less than or equal to 1000.0</system-out>
+</testcase>
+<testcase name="query book by id: 95th percentile of response time is less than or equal to 1000.0" status="true" time="0">
+  <system-out>query book by id: 95th percentile of response time is less than or equal to 1000.0</system-out>
+</testcase>
+<testcase name="query all authers: 95th percentile of response time is less than or equal to 1000.0" status="true" time="0">
+  <system-out>query all authers: 95th percentile of response time is less than or equal to 1000.0</system-out>
+</testcase>
+<testcase name="query auther by id: 95th percentile of response time is less than or equal to 1000.0" status="true" time="0">
+  <system-out>query auther by id: 95th percentile of response time is less than or equal to 1000.0</system-out>
+</testcase>
+<testcase name="mutation create a book: 95th percentile of response time is less than or equal to 2000.0" status="true" time="0">
+  <system-out>mutation create a book: 95th percentile of response time is less than or equal to 2000.0</system-out>
+</testcase>
+<testcase name="mutation update a book: 95th percentile of response time is less than or equal to 2000.0" status="true" time="0">
+  <system-out>mutation update a book: 95th percentile of response time is less than or equal to 2000.0</system-out>
+</testcase>
+<testcase name="mutation remove a book: 95th percentile of response time is less than or equal to 2000.0" status="true" time="0">
+  <system-out>mutation remove a book: 95th percentile of response time is less than or equal to 2000.0</system-out>
+</testcase>
+<testcase name="mutation update an auther: 95th percentile of response time is less than or equal to 2000.0" status="true" time="0">
+  <system-out>mutation update an auther: 95th percentile of response time is less than or equal to 2000.0</system-out>
+</testcase>
+<testcase name="mutation update an auther: 95th percentile of response time is less than or equal to 2000.0" status="true" time="0">
+  <system-out>mutation update an auther: 95th percentile of response time is less than or equal to 2000.0</system-out>
+</testcase>
+<testcase name="mutation update an auther: 95th percentile of response time is less than or equal to 2000.0" status="true" time="0">
+  <system-out>mutation update an auther: 95th percentile of response time is less than or equal to 2000.0</system-out>
+</testcase>
+<testcase name="Global: percentage of failed events is less than or equal to 1.0" status="false" time="0">
+  <failure type="Global: percentage of failed events is less than or equal to 1.0">Actual value: 5.27027027027027</failure>
+</testcase>
+</testsuite>
