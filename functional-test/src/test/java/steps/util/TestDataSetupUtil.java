@@ -2,10 +2,8 @@ package steps.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import steps.TestContext;
-import steps.dao.auther.Auther;
 import steps.dao.auther.AutherCreateInput;
 import steps.dao.auther.AutherCreateInputWrapper;
-import steps.dao.book.Book;
 import steps.dao.book.BookCreateInput;
 import steps.dao.book.BookCreateInputWrapper;
 

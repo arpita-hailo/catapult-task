@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import steps.dao.auther.*;
 import steps.dao.book.Book;
 import steps.dao.book.BookCreateManyAuthorInput;
-import steps.dao.book.BookCreateManyAuthorInputEnvelope;
 import steps.util.GraphQLQuery;
 import steps.util.GraphQLQueryExecutor;
 import steps.util.QueryStringAuthor;
@@ -15,7 +14,6 @@ import steps.util.TestDataSetupUtil;
 
 import java.util.List;
 
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class AuthorSteps {
