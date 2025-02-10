@@ -1,0 +1,10 @@
+{
+  "query": "mutation createBook($bookCreateInput:BookCreateInput!){\n  createBook(createBookInput:$bookCreateInput){\n    id\n    title\n  }\n}\n",
+  "variables": {
+    "bookCreateInput": {
+      "title": "Load test My latest book",
+      "published": false,
+      "delete": false
+    }
+  }
+}

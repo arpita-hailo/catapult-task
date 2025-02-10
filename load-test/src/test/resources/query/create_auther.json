@@ -1,0 +1,8 @@
+  {
+  "query": "mutation createAuther($autherCreateInput:AutherCreateInput!){\n  createAuther(createAutherInput:$autherCreateInput){\n    id\n    name\n  }\n}\n",
+  "variables": {
+    "autherCreateInput": {
+      "name": "Load test My latest author"
+    }
+  }
+}

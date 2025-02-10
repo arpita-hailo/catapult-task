@@ -1,0 +1,139 @@
+# Indicates exactly one field must be supplied and this field must not be `null`.
+directive @oneOf on INPUT_OBJECT
+
+type AutherCount {
+  posts: Int!
+}
+
+type Auther {
+  id: ID!
+  name: String
+  posts: [Book!]
+  _count: AutherCount!
+}
+
+type Book {
+  id: ID!
+  title: String!
+  content: String
+  published: Boolean
+  author: Auther
+  authorId: String
+}
+
+type Query {
+  bookAll: [Book!]!
+  book(id: BookWhereUniqueInput!): Book!
+  autherAll: [Auther!]!
+  auther(id: AutherWhereUniqueInput!): Auther!
+}
+
+input BookWhereUniqueInput {
+  id: String
+}
+
+input AutherWhereUniqueInput {
+  id: String
+}
+
+type Mutation {
+  createBook(createBookInput: BookCreateInput!): Book!
+  updateBook(updateBookInput: BookUpdateWithoutAuthorInput!): Book!
+  removeBook(id: BookWhereUniqueInput!): Book!
+  createAuther(createAutherInput: AutherCreateInput!): Auther!
+  updateAuther(updateAutherInput: AutherUpdateWithoutPostsInput!): Auther!
+  removeAuther(id: AutherWhereUniqueInput!): Auther!
+}
+
+input BookCreateInput {
+  id: String
+  title: String!
+  content: String
+  published: Boolean
+  author: AutherCreateNestedOneWithoutPostsInput
+  delete: Boolean
+}
+
+input AutherCreateNestedOneWithoutPostsInput {
+  create: AutherCreateWithoutPostsInput
+  connectOrCreate: AutherCreateOrConnectWithoutPostsInput
+  connect: AutherWhereUniqueInput
+}
+
+input AutherCreateWithoutPostsInput {
+  id: String
+  name: String
+}
+
+input AutherCreateOrConnectWithoutPostsInput {
+  where: AutherWhereUniqueInput!
+  create: AutherCreateWithoutPostsInput!
+}
+
+input BookUpdateWithoutAuthorInput {
+  id: StringFieldUpdateOperationsInput
+  title: StringFieldUpdateOperationsInput
+  content: NullableStringFieldUpdateOperationsInput
+  published: NullableBoolFieldUpdateOperationsInput
+  delete: BoolFieldUpdateOperationsInput
+}
+
+input StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input NullableStringFieldUpdateOperationsInput {
+  set: String
+}
+
+input NullableBoolFieldUpdateOperationsInput {
+  set: Boolean
+}
+
+input BoolFieldUpdateOperationsInput {
+  set: Boolean
+}
+
+input AutherCreateInput {
+  id: String
+  name: String
+  posts: BookCreateNestedManyWithoutAuthorInput
+}
+
+input BookCreateNestedManyWithoutAuthorInput {
+  create: [BookCreateWithoutAuthorInput!]
+  connectOrCreate: [BookCreateOrConnectWithoutAuthorInput!]
+  createMany: BookCreateManyAuthorInputEnvelope
+  connect: [BookWhereUniqueInput!]
+}
+
+input BookCreateWithoutAuthorInput {
+  id: String
+  title: String!
+  content: String
+  published: Boolean
+  delete: Boolean
+}
+
+input BookCreateOrConnectWithoutAuthorInput {
+  where: BookWhereUniqueInput!
+  create: BookCreateWithoutAuthorInput!
+}
+
+input BookCreateManyAuthorInputEnvelope {
+  data: [BookCreateManyAuthorInput!]!
+  skipDuplicates: Boolean
+}
+
+input BookCreateManyAuthorInput {
+  id: String
+  title: String!
+  content: String
+  published: Boolean
+  delete: Boolean
+}
+
+input AutherUpdateWithoutPostsInput {
+  id: StringFieldUpdateOperationsInput
+  name: NullableStringFieldUpdateOperationsInput
+}

@@ -1,0 +1,6 @@
+{
+  "query": "mutation removeBook($id:String){\n      removeBook(id:{id:$id}){\n     id\n     title\n     author{\n       id\n       name\n     }\n   }\n   }\n",
+  "variables": {
+    "id": "#{createdBookId}"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "query": "query book($id:String){\n      book(id:{id:$id}){\n     id\n     title\n     author{\n       id\n       name\n     }\n   }\n   }\n",
+  "variables": {
+    "id": "#{bookId}"
+  }
+}

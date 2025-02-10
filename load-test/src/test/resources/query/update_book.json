@@ -1,0 +1,13 @@
+{
+  "query": "mutation updateBook($bookUpdateWithoutAuthorInput:BookUpdateWithoutAuthorInput!){\n  updateBook(updateBookInput:$bookUpdateWithoutAuthorInput){\n    id\n    title\n  }\n}\n",
+  "variables": {
+    "bookUpdateWithoutAuthorInput": {
+      "id": {
+        "set": "#{createdBookId}"
+      },
+      "title": {
+        "set": "Updated latest book load test"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "query": "mutation updateAuther($autherUpdateWithoutPostsInput:AutherUpdateWithoutPostsInput!){\n  updateAuther(updateAutherInput:$autherUpdateWithoutPostsInput){\n    id\n    name\n  }\n}\n",
+  "variables": {
+    "autherUpdateWithoutPostsInput": {
+      "id": {
+        "set": "#{createdAutherId}"
+      },
+      "name": {
+        "set": "Updated latest author load test"
+      }
+    }
+  }
+}
