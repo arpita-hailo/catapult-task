@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>cucumber-jvm-example</td>
+        <td>1</td>
+      <td>10 Feb 2025, 16:00</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">steps.AuthorSteps.anAuthorIsCreatedWith(steps.dao.auther.AutherCreateInput)</td>
+              <td>6</td>
+              <td class="duration" data-value="131184500">0.131</td>
+              <td class="duration" data-value="131184500">0.176</td>
+              <td class="duration" data-value="787107000">0.787</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iCreateAnAuthorWith(steps.dao.auther.AutherCreateInput)</td>
+              <td>5</td>
+              <td class="duration" data-value="218265200">0.218</td>
+              <td class="duration" data-value="218265200">0.469</td>
+              <td class="duration" data-value="1091326000">1.091</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iFetchAllAuthors()</td>
+              <td>1</td>
+              <td class="duration" data-value="1211717000">1.211</td>
+              <td class="duration" data-value="1211717000">1.211</td>
+              <td class="duration" data-value="1211717000">1.211</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iFetchAnAuthorByItsId()</td>
+              <td>3</td>
+              <td class="duration" data-value="95956000">0.095</td>
+              <td class="duration" data-value="95956000">0.118</td>
+              <td class="duration" data-value="287868000">0.287</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iRemoveAnAuthorByIts()</td>
+              <td>2</td>
+              <td class="duration" data-value="98158000">0.098</td>
+              <td class="duration" data-value="98158000">0.102</td>
+              <td class="duration" data-value="196316000">0.196</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iUpdateAnAuthorWith(steps.dao.auther.AutherUpdateWithoutPostsInput)</td>
+              <td>2</td>
+              <td class="duration" data-value="93728500">0.093</td>
+              <td class="duration" data-value="93728500">0.102</td>
+              <td class="duration" data-value="187457000">0.187</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iUseAnInvalidBookIdToCreateAnAuthorWith(steps.dao.auther.AutherCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="294972000">0.294</td>
+              <td class="duration" data-value="294972000">0.294</td>
+              <td class="duration" data-value="294972000">0.294</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iUseTheSameBookIdToCreateAnAuthorWith(steps.dao.auther.AutherCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="143182000">0.143</td>
+              <td class="duration" data-value="143182000">0.143</td>
+              <td class="duration" data-value="143182000">0.143</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iUseTheSameBookIdsButWithSkipDuplicatesToCreateAnAuthorWith(steps.dao.auther.AutherCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="111071000">0.111</td>
+              <td class="duration" data-value="111071000">0.111</td>
+              <td class="duration" data-value="111071000">0.111</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iUseTheSameBookIdsToCreateAnAuthorWith(steps.dao.auther.AutherCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="122328000">0.122</td>
+              <td class="duration" data-value="122328000">0.122</td>
+              <td class="duration" data-value="122328000">0.122</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.iUseTheSameIdToCreateAnAuthorWith(steps.dao.auther.AutherCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="108576000">0.108</td>
+              <td class="duration" data-value="108576000">0.108</td>
+              <td class="duration" data-value="108576000">0.108</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.responseShouldHaveAtLeastAuthor(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="571690000">0.571</td>
+              <td class="duration" data-value="571690000">0.571</td>
+              <td class="duration" data-value="571690000">0.571</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.theCreateResponseShouldContainTheAuthorWith(steps.dao.auther.Auther)</td>
+              <td>5</td>
+              <td class="duration" data-value="24735600">0.024</td>
+              <td class="duration" data-value="24735600">0.042</td>
+              <td class="duration" data-value="123678000">0.123</td>
+              <td class="failed">20.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.theRemoveResponseShouldContainTheAuthorWith(steps.dao.auther.Auther)</td>
+              <td>1</td>
+              <td class="duration" data-value="10483000">0.010</td>
+              <td class="duration" data-value="10483000">0.010</td>
+              <td class="duration" data-value="10483000">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.theResponseShouldContainTheAuthorWith(steps.dao.auther.Auther)</td>
+              <td>3</td>
+              <td class="duration" data-value="64184333">0.064</td>
+              <td class="duration" data-value="64184333">0.077</td>
+              <td class="duration" data-value="192553000">0.192</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AuthorSteps.theUpdateResponseShouldContainTheAuthorWith(steps.dao.auther.Auther)</td>
+              <td>1</td>
+              <td class="duration" data-value="7545000">0.007</td>
+              <td class="duration" data-value="7545000">0.007</td>
+              <td class="duration" data-value="7545000">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.aBookIsCreatedWith(steps.dao.book.BookCreateInput)</td>
+              <td>10</td>
+              <td class="duration" data-value="150681700">0.150</td>
+              <td class="duration" data-value="150681700">0.243</td>
+              <td class="duration" data-value="1506817000">1.506</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iCreateABookWith(steps.dao.book.BookCreateInput)</td>
+              <td>4</td>
+              <td class="duration" data-value="195068250">0.195</td>
+              <td class="duration" data-value="195068250">0.297</td>
+              <td class="duration" data-value="780273000">0.780</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iFetchABookByItsId()</td>
+              <td>4</td>
+              <td class="duration" data-value="144532500">0.144</td>
+              <td class="duration" data-value="144532500">0.300</td>
+              <td class="duration" data-value="578130000">0.578</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iFetchAllBooks()</td>
+              <td>1</td>
+              <td class="duration" data-value="593297000">0.593</td>
+              <td class="duration" data-value="593297000">0.593</td>
+              <td class="duration" data-value="593297000">0.593</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iRemoveABookByIts()</td>
+              <td>1</td>
+              <td class="duration" data-value="98056000">0.098</td>
+              <td class="duration" data-value="98056000">0.098</td>
+              <td class="duration" data-value="98056000">0.098</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iUpdateABookWith(steps.dao.book.BookUpdateWithoutAuthorInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="110652000">0.110</td>
+              <td class="duration" data-value="110652000">0.110</td>
+              <td class="duration" data-value="110652000">0.110</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iUseAnInvalidAuthorIdToCreateABookWith(steps.dao.book.BookCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="291319000">0.291</td>
+              <td class="duration" data-value="291319000">0.291</td>
+              <td class="duration" data-value="291319000">0.291</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iUseTheSameAuthorIdToCreateABookWith(steps.dao.book.BookCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="124457000">0.124</td>
+              <td class="duration" data-value="124457000">0.124</td>
+              <td class="duration" data-value="124457000">0.124</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.iUseTheSameIdToCreateABookWith(steps.dao.book.BookCreateInput)</td>
+              <td>1</td>
+              <td class="duration" data-value="113947000">0.113</td>
+              <td class="duration" data-value="113947000">0.113</td>
+              <td class="duration" data-value="113947000">0.113</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.responseShouldHaveAtLeastBook(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="49982000">0.049</td>
+              <td class="duration" data-value="49982000">0.049</td>
+              <td class="duration" data-value="49982000">0.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.theCreateResponseShouldContainTheBookWith(steps.dao.book.Book)</td>
+              <td>3</td>
+              <td class="duration" data-value="23989000">0.023</td>
+              <td class="duration" data-value="23989000">0.025</td>
+              <td class="duration" data-value="71967000">0.071</td>
+              <td class="failed">33.33%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.theRemoveResponseShouldContainTheBookWith(steps.dao.book.Book)</td>
+              <td>1</td>
+              <td class="duration" data-value="7676000">0.007</td>
+              <td class="duration" data-value="7676000">0.007</td>
+              <td class="duration" data-value="7676000">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.theResponseShouldContainTheBookWith(steps.dao.book.Book)</td>
+              <td>4</td>
+              <td class="duration" data-value="56376250">0.056</td>
+              <td class="duration" data-value="56376250">0.079</td>
+              <td class="duration" data-value="225505000">0.225</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.theServiceShouldReturnAnError()</td>
+              <td>7</td>
+              <td class="duration" data-value="14870428">0.014</td>
+              <td class="duration" data-value="14870428">0.020</td>
+              <td class="duration" data-value="104093000">0.104</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.BookSteps.theUpdateResponseShouldContainTheBookWith(steps.dao.book.Book)</td>
+              <td>1</td>
+              <td class="duration" data-value="34565000">0.034</td>
+              <td class="duration" data-value="34565000">0.034</td>
+              <td class="duration" data-value="34565000">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.CucumberHooks.setUp()</td>
+              <td>28</td>
+              <td class="duration" data-value="14759107">0.014</td>
+              <td class="duration" data-value="14759107">0.360</td>
+              <td class="duration" data-value="413255000">0.413</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>32</td>
+            <td>104</td>
+            <td class="duration">0.101</td>
+            <td class="duration">1.506</td>
+            <td class="duration">10.551</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

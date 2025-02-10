@@ -2,7 +2,7 @@ This test automation project consists of 2 modules
 1. functional-test
 2. load-test
 
-Tools/Libraries used :
+### Tools/Libraries used :
 1. Java
 2. Maven
 3. Junit
@@ -11,21 +11,29 @@ Tools/Libraries used :
 6. SpringBoot
 7. Gatling
 
-Running tests:
-1. functional test
-   navigate inside functional-test module 'cd functional-test'
-   run this command 'mvn clean verify'
-   This will run all the functional tests and generate a html report 'overview-features.html' under 'functional-test/target/cucumber-html-reports/' directory
+### Running tests:
 
-2. load test
-   navigate inside load-test module 'cd load-test'
-   run this command 'mvn clean gatling:test'
-   This will run all the load tests and generate a html report 'index.html' under 'load-test/target/gatling/catapultloadtest-[date]/' directory
+#### 1. functional test
+
+   navigate inside functional-test module `cd functional-test`
+   run this command `mvn clean verify`
+   This will run all the functional tests and generate a html report '_overview-features.html_' under '_functional-test/target/cucumber-html-reports/_' directory
+
+I have attached the report from my last run here [overview-features.html](test-reports/cucumber-html-reports/overview-features.html)
+
+#### 2. load test
+
+   navigate inside load-test module `cd load-test`
+   run this command `mvn clean gatling:test`
+   This will run all the load tests and generate a html report '_index.html_' under '_load-test/target/gatling/catapultloadtest-[date]/_' directory
+
+I have attached the report from my last run here [index.html](test-reports/catapultloadtest-20250210150719286/index.html)
 
 
-Bugs encountered:
-1. create book with new/existing author does not return the author details in the response
-but get book returns the author details
-2. create auther with new/existing book does not return the book details in the response
-   but get auther returns the book details
-3. 
+### Test Plan:
+
+Test plan is attached here [Test_Plan.md](Test_Plan.md)
+
+### Bugs encountered:
+
+Bug report is attached here [catapult_bugs.md](catapult_bugs.md)
